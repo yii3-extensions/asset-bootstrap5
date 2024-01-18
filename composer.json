@@ -16,6 +16,7 @@
         "npm-asset/popperjs--core": "^2.11",
         "oomphinc/composer-installers-extender": "^2.0",
         "yiisoft/aliases":"^3.0",
+        "yiisoft/files":"^2.0",
         "yiisoft/assets":"^4.0"
     },
     "require-dev": {
