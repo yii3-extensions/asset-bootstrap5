@@ -2,6 +2,9 @@
     <a href="https://github.com/yii-tools/template" target="_blank">
         <img src="https://avatars.githubusercontent.com/u/121752654?s=200&v=4" height="100px">
     </a>
+    <a href="https://getbootstrap.com/" target="_blank">
+        <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png" height="100px">
+    </a>       
     <h1 align="center">Bootstrap 5 asset bundle for Yii Framework 3.</h1>
     <br>
 </p>
