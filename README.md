@@ -2,7 +2,7 @@
     <a href="https://github.com/yii-tools/template" target="_blank">
         <img src="https://avatars.githubusercontent.com/u/121752654?s=200&v=4" height="100px">
     </a>
-    <h1 align="center">Template.</h1>
+    <h1 align="center">Bootstrap 5 asset bundle for Yii Framework 3.</h1>
     <br>
 </p>
 
