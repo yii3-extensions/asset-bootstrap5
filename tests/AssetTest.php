@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Yii\Asset\Tests;
 
+use PHPForge\Support\Assert;
 use Yii\Asset\BootstrapAsset;
 use Yii\Asset\BootstrapCdnAsset;
 use Yii\Asset\BootstrapPluginAsset;
 use Yii\Asset\BootstrapPluginCdnAsset;
 use Yii\Asset\Tests\Support\TestTrait;
-use Yii\Support\Assert;
 use Yiisoft\Assets\AssetBundle;
 
 final class AssetTest extends \PHPUnit\Framework\TestCase
