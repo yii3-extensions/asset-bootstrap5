@@ -33,7 +33,7 @@ final class AssetTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(BootstrapAsset::class));
         $this->assertSame(
-            ["/55145ba9/bootstrap.css" => ["/55145ba9/bootstrap.css"]],
+            ['/55145ba9/bootstrap.css' => ['/55145ba9/bootstrap.css']],
             $this->assetManager->getCssFiles()
         );
     }
@@ -88,11 +88,11 @@ final class AssetTest extends \PHPUnit\Framework\TestCase
         $this->assetManager->register(BootstrapPluginAsset::class);
 
         $this->assertSame(
-            ["/55145ba9/bootstrap.css" => ["/55145ba9/bootstrap.css"]],
+            ['/55145ba9/bootstrap.css' => ['/55145ba9/bootstrap.css']],
             $this->assetManager->getCssFiles()
         );
         $this->assertSame(
-            ["/16b8de20/bootstrap.bundle.js" => ["/16b8de20/bootstrap.bundle.js"]],
+            ['/16b8de20/bootstrap.bundle.js' => ['/16b8de20/bootstrap.bundle.js']],
             $this->assetManager->getJsFiles()
         );
     }
