@@ -18,7 +18,6 @@ final class BootstrapPluginAsset extends AssetBundle
     public string|null $baseUrl = '@assetsUrl';
     public string|null $sourcePath = '@npm/bootstrap/dist/js';
     public array $depends = [BootstrapAsset::class];
-    public array $js = [YII_ENV === 'prod' ? 'bootstrap.bundle.min.js' : 'bootstrap.bundle.js'];
 
     public function __construct()
     {
@@ -27,6 +26,7 @@ final class BootstrapPluginAsset extends AssetBundle
 
         $pathMatcher = new PathMatcher();
 
+        $this->js = [YII_ENV === 'prod' ? 'bootstrap.bundle.min.js' : 'bootstrap.bundle.js'];
         $this->publishOptions = ['filter' => $pathMatcher->only(...array_merge($filesPattern, $filesMap))];
     }
 }

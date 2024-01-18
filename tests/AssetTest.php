@@ -16,15 +16,6 @@ final class AssetTest extends \PHPUnit\Framework\TestCase
 {
     use TestTrait;
 
-    public function testBootstrapAssetSimpleDependency(): void
-    {
-        $this->assertFalse($this->assetManager->isRegisteredBundle(BootstrapAsset::class));
-
-        $this->assetManager->register(BootstrapAsset::class);
-
-        $this->assertTrue($this->assetManager->isRegisteredBundle(BootstrapAsset::class));
-    }
-
     public function testBootstrapAssetRegister(): void
     {
         $this->assertFalse($this->assetManager->isRegisteredBundle(BootstrapAsset::class));
@@ -36,24 +27,19 @@ final class AssetTest extends \PHPUnit\Framework\TestCase
             ['/55145ba9/bootstrap.css' => ['/55145ba9/bootstrap.css']],
             $this->assetManager->getCssFiles()
         );
-    }
-
-    public function testBootstrapCdnAssetSimpleDependency(): void
-    {
-        $this->assertFalse($this->assetManager->isRegisteredBundle(BootstrapCdnAsset::class));
-
-        $this->assetManager->register(BootstrapCdnAsset::class);
-
-        $this->assertTrue($this->assetManager->isRegisteredBundle(BootstrapCdnAsset::class));
+        $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.css');
+        $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.css.map');
     }
 
     public function testBootstrapCdnAssetRegister(): void
     {
-        $this->assertFalse($this->assetManager->isRegisteredBundle(BootstrapCdnAsset::class));
+        $assetManager = $this->assetManager;
 
-        $this->assetManager->register(BootstrapCdnAsset::class);
+        $this->assertFalse($assetManager->isRegisteredBundle(BootstrapCdnAsset::class));
 
-        $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(BootstrapCdnAsset::class));
+        $assetManager->register(BootstrapCdnAsset::class);
+
+        $this->assertInstanceOf(AssetBundle::class, $assetManager->getBundle(BootstrapCdnAsset::class));
         $this->assertSame(
             [
                 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' => [
@@ -63,22 +49,8 @@ final class AssetTest extends \PHPUnit\Framework\TestCase
                     'rel' => 'stylesheet',
                 ],
             ],
-            $this->assetManager->getCssFiles()
+            $assetManager->getCssFiles()
         );
-    }
-
-    public function testBootstrapPluginAssetSimpleDependency(): void
-    {
-        $this->assertFalse($this->assetManager->isRegisteredBundle(BootstrapPluginAsset::class));
-
-        $this->assetManager->register(BootstrapPluginAsset::class);
-
-        $registerBundle = Assert::inaccessibleProperty($this->assetManager, 'registeredBundles');
-
-        $this->assertCount(2, $registerBundle);
-        $this->assertArrayHasKey(BootstrapAsset::class, $registerBundle);
-        $this->assertArrayHasKey(BootstrapPluginAsset::class, $registerBundle);
-        $this->assertInstanceOf(AssetBundle::class, $registerBundle[BootstrapAsset::class]);
     }
 
     public function testBootstrapPluginAssetRegister(): void
@@ -91,24 +63,14 @@ final class AssetTest extends \PHPUnit\Framework\TestCase
             ['/55145ba9/bootstrap.css' => ['/55145ba9/bootstrap.css']],
             $this->assetManager->getCssFiles()
         );
+        $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.css');
+        $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.css.map');
         $this->assertSame(
             ['/16b8de20/bootstrap.bundle.js' => ['/16b8de20/bootstrap.bundle.js']],
             $this->assetManager->getJsFiles()
         );
-    }
-
-    public function testBootstrapPluginCdnAssetSimpleDependency(): void
-    {
-        $this->assertFalse($this->assetManager->isRegisteredBundle(BootstrapPluginCdnAsset::class));
-
-        $this->assetManager->register(BootstrapPluginCdnAsset::class);
-
-        $registerBundle = Assert::inaccessibleProperty($this->assetManager, 'registeredBundles');
-
-        $this->assertCount(2, $registerBundle);
-        $this->assertArrayHasKey(BootstrapCdnAsset::class, $registerBundle);
-        $this->assertArrayHasKey(BootstrapPluginCdnAsset::class, $registerBundle);
-        $this->assertInstanceOf(AssetBundle::class, $registerBundle[BootstrapCdnAsset::class]);
+        $this->assertFileExists(__DIR__ . '/Support/runtime/16b8de20/bootstrap.bundle.js');
+        $this->assertFileExists(__DIR__ . '/Support/runtime/16b8de20/bootstrap.bundle.js.map');
     }
 
     public function testBootstrapPluginCdnAssetRegister(): void
@@ -138,5 +100,54 @@ final class AssetTest extends \PHPUnit\Framework\TestCase
             ],
             $this->assetManager->getJsFiles()
         );
+    }
+
+    /**
+     * @depends testBootstrapAssetRegister
+     * @depends testBootstrapCdnAssetRegister
+     * @depends testBootstrapPluginAssetRegister
+     * @depends testBootstrapPluginCdnAssetRegister
+     */
+    public function testProdBootstrapAssetRegister(): void
+    {
+        @runkit_constant_redefine('YII_ENV', 'prod');
+
+        $this->assertFalse($this->assetManager->isRegisteredBundle(BootstrapAsset::class));
+
+        $this->assetManager->register(BootstrapAsset::class);
+
+        $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(BootstrapAsset::class));
+        $this->assertSame(
+            ['/55145ba9/bootstrap.min.css' => ['/55145ba9/bootstrap.min.css']],
+            $this->assetManager->getCssFiles()
+        );
+        $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.min.css');
+        $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.min.css.map');
+    }
+
+    /**
+     * @depends testBootstrapAssetRegister
+     * @depends testBootstrapCdnAssetRegister
+     * @depends testBootstrapPluginAssetRegister
+     * @depends testBootstrapPluginCdnAssetRegister
+     */
+    public function testProdBootstrapPluginAssetRegister(): void
+    {
+        $this->assertFalse($this->assetManager->isRegisteredBundle(BootstrapPluginAsset::class));
+
+        $this->assetManager->register(BootstrapPluginAsset::class);
+
+        $this->assertSame(
+            ['/55145ba9/bootstrap.min.css' => ['/55145ba9/bootstrap.min.css']],
+            $this->assetManager->getCssFiles()
+        );
+        $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.min.css');
+        $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.min.css.map');
+        $this->assertSame(
+            ['/16b8de20/bootstrap.bundle.min.js' => ['/16b8de20/bootstrap.bundle.min.js']],
+            $this->assetManager->getJsFiles()
+        );
+        $this->assertFileExists(__DIR__ . '/Support/runtime/16b8de20/bootstrap.bundle.min.js');
+        $this->assertFileExists(__DIR__ . '/Support/runtime/16b8de20/bootstrap.bundle.min.js.map');
     }
 }

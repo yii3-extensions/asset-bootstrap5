@@ -27,6 +27,7 @@ jobs:
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     with:
+      extensions: runkit7
       os: >-
         ['ubuntu-latest', 'windows-latest']
       php: >-
