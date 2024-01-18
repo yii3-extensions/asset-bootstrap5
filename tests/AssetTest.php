@@ -102,6 +102,8 @@ final class AssetTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * @requires PHP 8.1
+     *
      * @depends testBootstrapAssetRegister
      * @depends testBootstrapCdnAssetRegister
      * @depends testBootstrapPluginAssetRegister
@@ -125,6 +127,8 @@ final class AssetTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * @requires PHP 8.1
+     *
      * @depends testBootstrapAssetRegister
      * @depends testBootstrapCdnAssetRegister
      * @depends testBootstrapPluginAssetRegister
