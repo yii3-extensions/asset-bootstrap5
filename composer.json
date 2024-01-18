@@ -8,8 +8,6 @@
         "bootstrap5"
     ],
     "license": "mit",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": "^8.1",
         "npm-asset/bootstrap": "^5.3",
