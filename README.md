@@ -2,7 +2,7 @@
     <a href="https://github.com/yii-tools/template" target="_blank">
         <img src="https://avatars.githubusercontent.com/u/121752654?s=200&v=4" height="100px">
     </a>
-    <h1 align="center">Template.</h1>
+    <h1 align="center">Bootstrap 5 asset bundle for Yii Framework 3.</h1>
     <br>
 </p>
 
@@ -34,13 +34,13 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 ```shell
-composer require --prefer-dist package
+composer require --prefer-dist yii3-extensions/asset-bootstrap5
 ```
 
 or add
 
 ```json
-"package": "version"
+"yii3-extensions/asset-bootstrap5": "dev-main"
 ```
 
 to the require-dev section of your `composer.json` file. 

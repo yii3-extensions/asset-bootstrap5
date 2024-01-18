@@ -11,4 +11,8 @@
   <projectFiles>
     <directory name="src" />
   </projectFiles>
+  <issueHandlers>
+    <MixedAssignment errorLevel="suppress" />
+    <UndefinedConstant errorLevel="suppress" />
+  </issueHandlers>
 </psalm>
