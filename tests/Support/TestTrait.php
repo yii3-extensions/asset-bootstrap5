@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Yii\Asset\Tests\Support;
 
 use Exception;
+use PHPForge\Support\Assert;
 use Psr\Log\NullLogger;
-use Yii\Support\Assert;
 use Yiisoft\Aliases\Aliases;
 use Yiisoft\Assets\AssetConverter;
 use Yiisoft\Assets\AssetLoader;
