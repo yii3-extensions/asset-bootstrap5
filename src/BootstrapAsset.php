@@ -18,7 +18,6 @@ final class BootstrapAsset extends AssetBundle
     public string|null $baseUrl = '@assetsUrl';
     public string|null $sourcePath = '@npm/bootstrap/dist/css';
     public array $css = [YII_ENV === 'prod' ? 'bootstrap.min.css' : 'bootstrap.css'];
-    public array $publishOptions = [];
 
     public function __construct()
     {

@@ -19,7 +19,6 @@ final class BootstrapPluginAsset extends AssetBundle
     public string|null $sourcePath = '@npm/bootstrap/dist/js';
     public array $depends = [BootstrapAsset::class];
     public array $js = [YII_ENV === 'prod' ? 'bootstrap.bundle.min.js' : 'bootstrap.bundle.js'];
-    public array $publishOptions = [];
 
     public function __construct()
     {
