@@ -23,10 +23,11 @@ final class BootstrapPluginAsset extends AssetBundle
     {
         $filesPattern = YII_ENV === 'prod' ? ['**/js/bootstrap.bundle.min.js'] : ['**/js/bootstrap.bundle.js'];
         $filesMap = YII_ENV === 'prod' ? ['**/js/bootstrap.bundle.min.js.map'] : ['**/js/bootstrap.bundle.js.map'];
+        $files = array_merge($filesPattern, $filesMap);
 
         $pathMatcher = new PathMatcher();
 
         $this->js = [YII_ENV === 'prod' ? 'bootstrap.bundle.min.js' : 'bootstrap.bundle.js'];
-        $this->publishOptions = ['filter' => $pathMatcher->only(...array_merge($filesPattern, $filesMap))];
+        $this->publishOptions = ['filter' => $pathMatcher->only(...$files)];
     }
 }
