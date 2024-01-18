@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://github.com/yii-tools/template" target="_blank">
+    <a href="https://github.com/yii3-extensions/asset-bootstrap5" target="_blank">
         <img src="https://avatars.githubusercontent.com/u/121752654?s=200&v=4" height="100px">
     </a>
     <a href="https://getbootstrap.com/" target="_blank">
@@ -10,20 +10,20 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/yii-tools/template/actions/workflows/build.yml" target="_blank">
-        <img src="https://github.com/yii-tools/template/actions/workflows/build.yml/badge.svg" alt="PHPUnit">
+    <a href="https://github.com/yii3-extensions/asset-bootstrap5/actions/workflows/build.yml" target="_blank">
+        <img src="https://github.com/yii3-extensions/asset-bootstrap5/actions/workflows/build.yml/badge.svg" alt="PHPUnit">
     </a>
-    <a href="https://codecov.io/gh/yii-tools/template" target="_blank">
-        <img src="https://codecov.io/gh/yii-tools/template/branch/main/graph/badge.svg?token=MF0XUGVLYC" alt="Codecov">
+    <a href="https://codecov.io/gh/yii3-extensions/asset-bootstrap5" target="_blank">
+        <img src="https://codecov.io/gh/yii3-extensions/asset-bootstrap5/branch/main/graph/badge.svg?token=MF0XUGVLYC" alt="Codecov">
     </a>
-    <a href="https://dashboard.stryker-mutator.io/reports/github.com/yii-tools/template/main" target="_blank">
-        <img src="https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fyii2-extensions%2Fasset-bootstrap5%2Fmain" alt="Infection">
+    <a href="https://dashboard.stryker-mutator.io/reports/github.com/yii3-extensions/asset-bootstrap5/main" target="_blank">
+        <img src="https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fyii3-extensions%2Fasset-bootstrap5%2Fmain" alt="Infection">
     </a>
-    <a href="https://github.com/yii-tools/template/actions/workflows/static.yml" target="_blank">
-        <img src="https://github.com/yii-tools/template/actions/workflows/static.yml/badge.svg" alt="Psalm">
+    <a href="https://github.com/yii3-extensions/asset-bootstrap5/actions/workflows/static.yml" target="_blank">
+        <img src="https://github.com/yii3-extensions/asset-bootstrap5/actions/workflows/static.yml/badge.svg" alt="Psalm">
     </a>
-    <a href="https://shepherd.dev/github/yii-tools/template" target="_blank">
-        <img src="https://shepherd.dev/github/yii-tools/template/coverage.svg" alt="Psalm Coverage">
+    <a href="https://shepherd.dev/github/yii3-extensions/asset-bootstrap5" target="_blank">
+        <img src="https://shepherd.dev/github/yii3-extensions/asset-bootstrap5/coverage.svg" alt="Psalm Coverage">
     </a>
     <a href="https://github.styleci.io/repos/744974682?branch=main" target="_blank">
         <img src="https://github.styleci.io/repos/744974682/shield?branch=main" alt="Style ci">
