@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Yii\Asset\Tests;
 
+use PHPUnit\Framework\Attributes\RequiresPhp;
 use Yii\Asset\BootstrapAsset;
 use Yii\Asset\BootstrapCdnAsset;
 use Yii\Asset\BootstrapPluginAsset;
@@ -107,13 +108,12 @@ final class AssetTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @requires PHP 8.1
-     *
      * @depends testBootstrapAssetRegister
      * @depends testBootstrapCdnAssetRegister
      * @depends testBootstrapPluginAssetRegister
      * @depends testBootstrapPluginCdnAssetRegister
      */
+    #[RequiresPhp('8.1')]
     public function testProdBootstrapAssetRegister(): void
     {
         @runkit_constant_redefine('YII_ENV', 'prod');
@@ -132,13 +132,12 @@ final class AssetTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @requires PHP 8.1
-     *
      * @depends testBootstrapAssetRegister
      * @depends testBootstrapCdnAssetRegister
      * @depends testBootstrapPluginAssetRegister
      * @depends testBootstrapPluginCdnAssetRegister
      */
+    #[RequiresPhp('8.1')]
     public function testProdBootstrapPluginAssetRegister(): void
     {
         $this->assertFalse($this->assetManager->isRegisteredBundle(BootstrapPluginAsset::class));
