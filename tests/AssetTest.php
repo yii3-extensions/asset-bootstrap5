@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Yii\Asset\Tests;
 
-use Yii;
 use Yii\Asset\BootstrapAsset;
 use Yii\Asset\BootstrapCdnAsset;
 use Yii\Asset\BootstrapPluginAsset;
