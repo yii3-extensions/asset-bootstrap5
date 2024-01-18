@@ -64,12 +64,17 @@ final class AssetTest extends \PHPUnit\Framework\TestCase
         );
         $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.css');
         $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.css.map');
+        $this->assertFileDoesNotExist(__DIR__ . '/Support/runtime/55145ba9/bootstrap.min.css');
+        $this->assertFileDoesNotExist(__DIR__ . '/Support/runtime/55145ba9/bootstrap.min.css.map');
+
         $this->assertSame(
             ['/16b8de20/bootstrap.bundle.js' => ['/16b8de20/bootstrap.bundle.js']],
             $this->assetManager->getJsFiles()
         );
         $this->assertFileExists(__DIR__ . '/Support/runtime/16b8de20/bootstrap.bundle.js');
         $this->assertFileExists(__DIR__ . '/Support/runtime/16b8de20/bootstrap.bundle.js.map');
+        $this->assertFileDoesNotExist(__DIR__ . '/Support/runtime/16b8de20/bootstrap.bundle.min.js');
+        $this->assertFileDoesNotExist(__DIR__ . '/Support/runtime/16b8de20/bootstrap.bundle.min.js.map');
     }
 
     public function testBootstrapPluginCdnAssetRegister(): void
