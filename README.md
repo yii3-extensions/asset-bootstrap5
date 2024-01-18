@@ -43,7 +43,7 @@ composer require --prefer-dist yii3-extensions/asset-bootstrap5
 or add
 
 ```json
-"yii3-extensions/asset-bootstrap5": "dev-main"
+"yii3-extensions/asset-bootstrap5": "^0.1"
 ```
 
 to the require-dev section of your `composer.json` file. 
