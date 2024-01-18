@@ -25,8 +25,8 @@
     <a href="https://shepherd.dev/github/yii-tools/template" target="_blank">
         <img src="https://shepherd.dev/github/yii-tools/template/coverage.svg" alt="Psalm Coverage">
     </a>
-    <a href="https://github.styleci.io/repos/494495136?branch=main" target="_blank">
-        <img src="https://github.styleci.io/repos/494495136/shield?branch=main" alt="Style ci">
+    <a href="https://github.styleci.io/repos/744974682?branch=main" target="_blank">
+        <img src="https://github.styleci.io/repos/744974682/shield?branch=main" alt="Style ci">
     </a>           
 </p>
 
