@@ -17,15 +17,16 @@ final class BootstrapAsset extends AssetBundle
     public string|null $basePath = '@assets';
     public string|null $baseUrl = '@assetsUrl';
     public string|null $sourcePath = '@npm/bootstrap/dist/css';
-    public array $css = [YII_ENV === 'prod' ? 'bootstrap.min.css' : 'bootstrap.css'];
 
     public function __construct()
     {
         $filesPattern = YII_ENV === 'prod' ? ['**/css/bootstrap.min.css'] : ['**/css/bootstrap.css'];
         $filesMap = YII_ENV === 'prod' ? ['**/css/bootstrap.min.css.map'] : ['**/css/bootstrap.css.map'];
+        $files = array_merge($filesPattern, $filesMap);
 
         $pathMatcher = new PathMatcher();
 
-        $this->publishOptions = ['filter' => $pathMatcher->only(...array_merge($filesPattern, $filesMap))];
+        $this->css = [YII_ENV === 'prod' ? 'bootstrap.min.css' : 'bootstrap.css'];
+        $this->publishOptions = ['filter' => $pathMatcher->only(...$files)];
     }
 }

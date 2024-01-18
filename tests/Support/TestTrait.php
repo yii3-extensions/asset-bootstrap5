@@ -54,7 +54,7 @@ trait TestTrait
         $converter = new AssetConverter($aliases, new NullLogger(), [], false);
         $loader = new AssetLoader($aliases, false, [], null, null);
 
-        $this->assetPublisher = (new AssetPublisher($aliases, false, false))
+        $this->assetPublisher = (new AssetPublisher($aliases, true, false))
             ->withHashCallback(
                 static function (string $path) {
                     return match (str_contains($path, 'css')) {
