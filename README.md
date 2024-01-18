@@ -34,13 +34,13 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 ```shell
-composer require --prefer-dist package
+composer require --prefer-dist yii3-extensions/asset-bootstrap5
 ```
 
 or add
 
 ```json
-"package": "version"
+"yii3-extensions/asset-bootstrap5": "dev-main"
 ```
 
 to the require-dev section of your `composer.json` file. 
