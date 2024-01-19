@@ -7,7 +7,7 @@ namespace Yii\Asset;
 use Yiisoft\Assets\AssetBundle;
 use Yiisoft\Files\PathMatcher\PathMatcher;
 
-use function array_merge;
+use function defined;
 
 /**
  * Twitter Bootstrap 5 JavaScript bundle.
@@ -21,13 +21,12 @@ final class BootstrapPluginAsset extends AssetBundle
 
     public function __construct()
     {
-        $filesPattern = YII_ENV === 'prod' ? ['**/js/bootstrap.bundle.min.js'] : ['**/js/bootstrap.bundle.js'];
-        $filesMap = YII_ENV === 'prod' ? ['**/js/bootstrap.bundle.min.js.map'] : ['**/js/bootstrap.bundle.js.map'];
-        $files = array_merge($filesPattern, $filesMap);
-
         $pathMatcher = new PathMatcher();
 
-        $this->js = [YII_ENV === 'prod' ? 'bootstrap.bundle.min.js' : 'bootstrap.bundle.js'];
-        $this->publishOptions = ['filter' => $pathMatcher->only(...$files)];
+        $environment = defined('YII_ENV') ? YII_ENV : 'prod';
+        $jsFiles = $environment === 'prod' ? 'bootstrap.bundle.min.js' : 'bootstrap.bundle.js';
+
+        $this->js = [$jsFiles];
+        $this->publishOptions = ['filter' => $pathMatcher->only("**/js/{$jsFiles}", "**/js/{$jsFiles}.map")];
     }
 }
