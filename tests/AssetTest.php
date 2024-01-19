@@ -107,12 +107,6 @@ final class AssetTest extends \PHPUnit\Framework\TestCase
         );
     }
 
-    /**
-     * @depends testBootstrapAssetRegister
-     * @depends testBootstrapCdnAssetRegister
-     * @depends testBootstrapPluginAssetRegister
-     * @depends testBootstrapPluginCdnAssetRegister
-     */
     #[RequiresPhp('8.1')]
     public function testProdBootstrapAssetRegister(): void
     {
@@ -129,17 +123,15 @@ final class AssetTest extends \PHPUnit\Framework\TestCase
         );
         $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.min.css');
         $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.min.css.map');
+
+        @runkit_constant_redefine('YII_ENV', 'test');
     }
 
-    /**
-     * @depends testBootstrapAssetRegister
-     * @depends testBootstrapCdnAssetRegister
-     * @depends testBootstrapPluginAssetRegister
-     * @depends testBootstrapPluginCdnAssetRegister
-     */
     #[RequiresPhp('8.1')]
     public function testProdBootstrapPluginAssetRegister(): void
     {
+        @runkit_constant_redefine('YII_ENV', 'prod');
+
         $this->assertFalse($this->assetManager->isRegisteredBundle(BootstrapPluginAsset::class));
 
         $this->assetManager->register(BootstrapPluginAsset::class);
@@ -156,5 +148,7 @@ final class AssetTest extends \PHPUnit\Framework\TestCase
         );
         $this->assertFileExists(__DIR__ . '/Support/runtime/16b8de20/bootstrap.bundle.min.js');
         $this->assertFileExists(__DIR__ . '/Support/runtime/16b8de20/bootstrap.bundle.min.js.map');
+
+        @runkit_constant_redefine('YII_ENV', 'test');
     }
 }

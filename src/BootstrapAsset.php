@@ -20,13 +20,12 @@ final class BootstrapAsset extends AssetBundle
 
     public function __construct()
     {
-        $filesPattern = YII_ENV === 'prod' ? ['**/css/bootstrap.min.css'] : ['**/css/bootstrap.css'];
-        $filesMap = YII_ENV === 'prod' ? ['**/css/bootstrap.min.css.map'] : ['**/css/bootstrap.css.map'];
-        $files = array_merge($filesPattern, $filesMap);
-
         $pathMatcher = new PathMatcher();
 
-        $this->css = [YII_ENV === 'prod' ? 'bootstrap.min.css' : 'bootstrap.css'];
-        $this->publishOptions = ['filter' => $pathMatcher->only(...$files)];
+        $environment = defined('YII_ENV') ? YII_ENV : 'prod';
+        $cssFiles = $environment === 'prod' ? 'bootstrap.min.css' : 'bootstrap.css';
+
+        $this->css = [$cssFiles];
+        $this->publishOptions = ['filter' => $pathMatcher->only("**/css/{$cssFiles}", "**/css/{$cssFiles}.map")];
     }
 }
