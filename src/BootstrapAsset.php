@@ -7,8 +7,6 @@ namespace Yii\Asset;
 use Yiisoft\Assets\AssetBundle;
 use Yiisoft\Files\PathMatcher\PathMatcher;
 
-use function array_merge;
-
 /**
  * Twitter Bootstrap 5 CSS bundle.
  */
