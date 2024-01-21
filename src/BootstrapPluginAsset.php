@@ -27,6 +27,8 @@ final class BootstrapPluginAsset extends AssetBundle
         $jsFiles = $environment === 'prod' ? 'bootstrap.bundle.min.js' : 'bootstrap.bundle.js';
 
         $this->js = [$jsFiles];
-        $this->publishOptions = ['filter' => $pathMatcher->only("**/js/{$jsFiles}", "**/js/{$jsFiles}.map")];
+        $this->publishOptions = [
+            'filter' => $pathMatcher->only("**/js/{$jsFiles}", "**/js/{$jsFiles}.map"),
+        ];
     }
 }

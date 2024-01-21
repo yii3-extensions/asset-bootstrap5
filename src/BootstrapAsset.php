@@ -26,6 +26,8 @@ final class BootstrapAsset extends AssetBundle
         $cssFiles = $environment === 'prod' ? 'bootstrap.min.css' : 'bootstrap.css';
 
         $this->css = [$cssFiles];
-        $this->publishOptions = ['filter' => $pathMatcher->only("**/css/{$cssFiles}", "**/css/{$cssFiles}.map")];
+        $this->publishOptions = [
+            'filter' => $pathMatcher->only("**/css/{$cssFiles}", "**/css/{$cssFiles}.map"),
+        ];
     }
 }

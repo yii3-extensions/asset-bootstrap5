@@ -23,7 +23,9 @@ final class BootstrapAssetTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(BootstrapAsset::class));
         $this->assertSame(
-            ['/55145ba9/bootstrap.css' => ['/55145ba9/bootstrap.css']],
+            [
+                '/55145ba9/bootstrap.css' => ['/55145ba9/bootstrap.css'],
+            ],
             $this->assetManager->getCssFiles()
         );
         $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.css');
@@ -41,7 +43,9 @@ final class BootstrapAssetTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(BootstrapAsset::class));
         $this->assertSame(
-            ['/55145ba9/bootstrap.min.css' => ['/55145ba9/bootstrap.min.css']],
+            [
+                '/55145ba9/bootstrap.min.css' => ['/55145ba9/bootstrap.min.css'],
+            ],
             $this->assetManager->getCssFiles()
         );
         $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.min.css');
