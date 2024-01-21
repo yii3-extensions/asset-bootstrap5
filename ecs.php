@@ -12,7 +12,7 @@ return ECSConfig::configure()
     ->withPaths(
         [
             __DIR__ . '/src',
-            __DIR__ . '/tests'
+            __DIR__ . '/tests',
         ],
     )
     ->withRules(
