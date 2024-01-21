@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Yii\Asset\Tests;
 
 use Yii\Asset\BootstrapCdnAsset;
-use Yii\Asset\Tests\Support\TestTrait;
+use Yii\Asset\Tests\Support\TestSupport;
 use Yiisoft\Assets\AssetBundle;
 
 final class BootstrapCdnAssetTest extends \PHPUnit\Framework\TestCase
 {
-    use TestTrait;
+    use TestSupport;
 
     public function testRegister(): void
     {
