@@ -16,6 +16,3 @@ ij_php_space_after_type_cast = true
 
 [*.md]
 trim_trailing_whitespace = false
-
-[*.yml]
-indent_size = 2
