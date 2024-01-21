@@ -31,6 +31,7 @@ return ECSConfig::configure()
         psr12: true,
         strict: true
     )
+    ->withPhpCsFixerSets(perCS20: true)
     ->withConfiguredRule(
         ClassDefinitionFixer::class,
         [
