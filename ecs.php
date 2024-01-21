@@ -12,7 +12,7 @@ return ECSConfig::configure()
     ->withPaths(
         [
             __DIR__ . '/src',
-             __DIR__ . '/tests'
+            __DIR__ . '/tests'
         ],
     )
     ->withRules(
@@ -24,10 +24,12 @@ return ECSConfig::configure()
     )
     ->withPreparedSets(
         arrays: true,
+        cleanCode: true,
         comments:true,
         docblocks: true,
         namespaces: true,
-        psr12: true
+        psr12: true,
+        strict: true
     )
     ->withConfiguredRule(
         ClassDefinitionFixer::class,
