@@ -6,13 +6,13 @@ namespace Yii\Asset\Tests;
 
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use Yii\Asset\BootstrapPluginAsset;
-use Yii\Asset\Tests\Support\TestTrait;
+use Yii\Asset\Tests\Support\TestSupport;
 
 use function runkit_constant_redefine;
 
 final class BootstrapPluginAssetTest extends \PHPUnit\Framework\TestCase
 {
-    use TestTrait;
+    use TestSupport;
 
     public function testRegister(): void
     {

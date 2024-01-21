@@ -32,6 +32,9 @@
 
 ## Installation
 
+This package requires [npm](https://www.npmjs.com/) for [php-forge](https://www.github.com/php-forge/foxy), which
+manages the installation of npm packages and resource compilation.
+
 The preferred way to install this extension is through [composer](https://getcomposer.org/download/).
 
 Either run

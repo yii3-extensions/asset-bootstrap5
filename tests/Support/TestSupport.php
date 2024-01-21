@@ -13,7 +13,7 @@ use Yiisoft\Assets\AssetLoader;
 use Yiisoft\Assets\AssetManager;
 use Yiisoft\Assets\AssetPublisher;
 
-trait TestTrait
+trait TestSupport
 {
     private AssetManager $assetManager;
     private AssetPublisher $assetPublisher;

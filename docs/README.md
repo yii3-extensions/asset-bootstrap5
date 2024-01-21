@@ -54,8 +54,3 @@ return [
     ],
 ];
 ```
-
-## Using npm packages
-
-You can install [npm](https://www.npmjs.com/) packages [fxpio/foxy](https://github.com/fxpio/foxy), and they will be
-available in the `node_modules` directory.

@@ -10,8 +10,7 @@
     "license": "mit",
     "require": {
         "php": "^8.1",
-        "npm-asset/bootstrap": "^5.3",
-        "oomphinc/composer-installers-extender": "^2.0",
+        "php-forge/foxy":"^0.1",
         "yiisoft/files":"^2.0",
         "yiisoft/assets":"^4.0"
     },
@@ -36,17 +35,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "1.0.x-dev"
-        },
-        "installer-types": [
-            "bower-asset",
-            "npm-asset"
-        ],
-        "installer-paths": {
-            "./node_modules/{$name}": [
-                "type:bower-asset",
-                "type:npm-asset"
-            ]
+            "dev-main": "0.1-dev"
         }
     },
     "repositories": [
@@ -60,7 +49,7 @@
         "allow-plugins": {
             "infection/extension-installer": true,
             "composer/installers": true,
-            "oomphinc/composer-installers-extender": true
+            "php-forge/foxy": true
         }
     },
     "scripts": {
