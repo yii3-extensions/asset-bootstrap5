@@ -9,19 +9,20 @@ use PhpCsFixer\Fixer\Import\NoUnusedImportsFixer;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
 return ECSConfig::configure()
+    ->withConfiguredRule(
+        ClassDefinitionFixer::class,
+        [
+            'space_before_parenthesis' => true,
+        ],
+    )
+    ->withFileExtensions(['php'])
     ->withPaths(
         [
             __DIR__ . '/src',
             __DIR__ . '/tests',
         ],
     )
-    ->withRules(
-        [
-            NoUnusedImportsFixer::class,
-            OrderedClassElementsFixer::class,
-            OrderedTraitsFixer::class,
-        ]
-    )
+    ->withPhpCsFixerSets(perCS20: true)
     ->withPreparedSets(
         arrays: true,
         cleanCode: true,
@@ -31,10 +32,10 @@ return ECSConfig::configure()
         psr12: true,
         strict: true
     )
-    ->withPhpCsFixerSets(perCS20: true)
-    ->withConfiguredRule(
-        ClassDefinitionFixer::class,
+    ->withRules(
         [
-            'space_before_parenthesis' => true,
-        ],
+            NoUnusedImportsFixer::class,
+            OrderedClassElementsFixer::class,
+            OrderedTraitsFixer::class,
+        ]
     );
