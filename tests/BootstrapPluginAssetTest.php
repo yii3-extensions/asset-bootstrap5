@@ -21,7 +21,9 @@ final class BootstrapPluginAssetTest extends \PHPUnit\Framework\TestCase
         $this->assetManager->register(BootstrapPluginAsset::class);
 
         $this->assertSame(
-            ['/55145ba9/bootstrap.css' => ['/55145ba9/bootstrap.css']],
+            [
+                '/55145ba9/bootstrap.css' => ['/55145ba9/bootstrap.css'],
+            ],
             $this->assetManager->getCssFiles()
         );
         $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.css');
@@ -30,7 +32,9 @@ final class BootstrapPluginAssetTest extends \PHPUnit\Framework\TestCase
         $this->assertFileDoesNotExist(__DIR__ . '/Support/runtime/55145ba9/bootstrap.min.css.map');
 
         $this->assertSame(
-            ['/16b8de20/bootstrap.bundle.js' => ['/16b8de20/bootstrap.bundle.js']],
+            [
+                '/16b8de20/bootstrap.bundle.js' => ['/16b8de20/bootstrap.bundle.js'],
+            ],
             $this->assetManager->getJsFiles()
         );
         $this->assertFileExists(__DIR__ . '/Support/runtime/16b8de20/bootstrap.bundle.js');
@@ -49,13 +53,17 @@ final class BootstrapPluginAssetTest extends \PHPUnit\Framework\TestCase
         $this->assetManager->register(BootstrapPluginAsset::class);
 
         $this->assertSame(
-            ['/55145ba9/bootstrap.min.css' => ['/55145ba9/bootstrap.min.css']],
+            [
+                '/55145ba9/bootstrap.min.css' => ['/55145ba9/bootstrap.min.css'],
+            ],
             $this->assetManager->getCssFiles()
         );
         $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.min.css');
         $this->assertFileExists(__DIR__ . '/Support/runtime/55145ba9/bootstrap.min.css.map');
         $this->assertSame(
-            ['/16b8de20/bootstrap.bundle.min.js' => ['/16b8de20/bootstrap.bundle.min.js']],
+            [
+                '/16b8de20/bootstrap.bundle.min.js' => ['/16b8de20/bootstrap.bundle.min.js'],
+            ],
             $this->assetManager->getJsFiles()
         );
         $this->assertFileExists(__DIR__ . '/Support/runtime/16b8de20/bootstrap.bundle.min.js');
