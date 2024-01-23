@@ -10,7 +10,7 @@ use Yiisoft\Files\PathMatcher\PathMatcher;
 use function defined;
 
 /**
- * Twitter Bootstrap 5 CSS bundle.
+ * Twitter Bootstrap5 CSS bundle.
  */
 final class BootstrapAsset extends AssetBundle
 {
@@ -27,7 +27,7 @@ final class BootstrapAsset extends AssetBundle
 
         $this->css = [$cssFiles];
         $this->publishOptions = [
-            'filter' => $pathMatcher->only("**/css/{$cssFiles}", "**/css/{$cssFiles}.map"),
+            'filter' => $pathMatcher->only("**/css/$cssFiles", "**/css/$cssFiles.map"),
         ];
     }
 }

@@ -2,13 +2,19 @@
 
 ## Checking dependencies
 
-This package uses [composer-require-checker](https://github.com/maglnet/ComposerRequireChecker) to check if all dependencies are correctly defined in `composer.json`.
+This package uses [composer-require-checker](https://github.com/maglnet/ComposerRequireChecker) to check if all 
+dependencies are correctly defined in `composer.json`.
 
 To run the checker, execute the following command:
 
 ```shell
 composer run check-dependencies
 ```
+
+## Easy coding standard
+
+The code is checked with [Easy Coding Standard](https://github.com/easy-coding-standard/easy-coding-standard) and
+[PHP CS Fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer). To run it:
 
 ## Mutation testing
 

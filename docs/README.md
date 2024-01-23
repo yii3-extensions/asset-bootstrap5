@@ -1,7 +1,10 @@
 # Using assets
 
-Assets are files that are not processed by Webpack. They are copied directly to the output folder. This includes images,
-fonts, and any other files that you want to use in your project.
+Assets are files that Webpack does not process.
+
+They are copied directly to the output folder.
+
+This includes images, fonts, and any other files that you want to use in your project.
 
 To use an asset, you need to import it from JavaScript or CSS.
 
@@ -22,7 +25,7 @@ use Yiisoft\Assets\AssetManager;
  * @var AssetManager $assetManager
  */
 
-// Register the asset bundle with a asset manager component.
+// Register the asset bundle with an asset manager component.
 $assetManager->register(BootstrapAsset::class);
 
 // Set parameters for the registered asset bundle a view component.
@@ -33,7 +36,7 @@ $this->addJsStrings($assetManager->getJsStrings());
 $this->addJsVars($assetManager->getJsVars());
 ```
 
-Also you can register the asset bundle via container configuration:
+Also, you can register the asset bundle via container configuration:
 
 ```php
 file: ./config/params.php
