@@ -8,18 +8,24 @@ use PHPUnit\Framework\Attributes\RequiresPhp;
 use Yii\Asset\BootstrapPluginAsset;
 use Yii\Asset\Tests\Support\TestSupport;
 
+use Yiisoft\Assets\Exception\InvalidConfigException;
+
 use function runkit_constant_redefine;
 
 final class BootstrapPluginAssetTest extends \PHPUnit\Framework\TestCase
 {
     use TestSupport;
 
+    /**
+     * @throws InvalidConfigException
+     */
     public function testRegister(): void
     {
         $this->assertFalse($this->assetManager->isRegisteredBundle(BootstrapPluginAsset::class));
 
         $this->assetManager->register(BootstrapPluginAsset::class);
 
+        $this->assertTrue($this->assetManager->isRegisteredBundle(BootstrapPluginAsset::class));
         $this->assertSame(
             [
                 '/55145ba9/bootstrap.css' => ['/55145ba9/bootstrap.css'],
@@ -43,6 +49,9 @@ final class BootstrapPluginAssetTest extends \PHPUnit\Framework\TestCase
         $this->assertFileDoesNotExist(__DIR__ . '/Support/runtime/16b8de20/bootstrap.bundle.min.js.map');
     }
 
+    /**
+     * @throws InvalidConfigException
+     */
     #[RequiresPhp('8.1')]
     public function testRegisterWithEnvironmentProd(): void
     {
@@ -52,6 +61,7 @@ final class BootstrapPluginAssetTest extends \PHPUnit\Framework\TestCase
 
         $this->assetManager->register(BootstrapPluginAsset::class);
 
+        $this->assertTrue($this->assetManager->isRegisteredBundle(BootstrapPluginAsset::class));
         $this->assertSame(
             [
                 '/55145ba9/bootstrap.min.css' => ['/55145ba9/bootstrap.min.css'],

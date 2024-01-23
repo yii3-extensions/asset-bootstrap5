@@ -6,12 +6,15 @@ namespace Yii\Asset\Tests;
 
 use Yii\Asset\BootstrapCdnAsset;
 use Yii\Asset\Tests\Support\TestSupport;
-use Yiisoft\Assets\AssetBundle;
+use Yiisoft\Assets\Exception\InvalidConfigException;
 
 final class BootstrapCdnAssetTest extends \PHPUnit\Framework\TestCase
 {
     use TestSupport;
 
+    /**
+     * @throws InvalidConfigException
+     */
     public function testRegister(): void
     {
         $assetManager = $this->assetManager;
@@ -20,7 +23,7 @@ final class BootstrapCdnAssetTest extends \PHPUnit\Framework\TestCase
 
         $assetManager->register(BootstrapCdnAsset::class);
 
-        $this->assertInstanceOf(AssetBundle::class, $assetManager->getBundle(BootstrapCdnAsset::class));
+        $this->assertTrue($assetManager->isRegisteredBundle(BootstrapCdnAsset::class));
         $this->assertSame(
             [
                 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' => [

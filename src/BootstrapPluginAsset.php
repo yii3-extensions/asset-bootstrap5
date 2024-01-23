@@ -10,7 +10,7 @@ use Yiisoft\Files\PathMatcher\PathMatcher;
 use function defined;
 
 /**
- * Twitter Bootstrap 5 JavaScript bundle.
+ * Twitter Bootstrap5 JavaScript bundle.
  */
 final class BootstrapPluginAsset extends AssetBundle
 {
@@ -28,7 +28,7 @@ final class BootstrapPluginAsset extends AssetBundle
 
         $this->js = [$jsFiles];
         $this->publishOptions = [
-            'filter' => $pathMatcher->only("**/js/{$jsFiles}", "**/js/{$jsFiles}.map"),
+            'filter' => $pathMatcher->only("**/js/$jsFiles", "**/js/$jsFiles.map"),
         ];
     }
 }

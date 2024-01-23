@@ -7,7 +7,7 @@ namespace Yii\Asset;
 use Yiisoft\Assets\AssetBundle;
 
 /**
- * Twitter Bootstrap 5 CDN JavaScript bundle.
+ * Twitter Bootstrap5 CDN JavaScript bundle.
  */
 final class BootstrapPluginCdnAsset extends AssetBundle
 {
