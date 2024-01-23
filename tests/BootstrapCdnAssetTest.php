@@ -8,6 +8,9 @@ use Yii\Asset\BootstrapCdnAsset;
 use Yii\Asset\Tests\Support\TestSupport;
 use Yiisoft\Assets\Exception\InvalidConfigException;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 final class BootstrapCdnAssetTest extends \PHPUnit\Framework\TestCase
 {
     use TestSupport;

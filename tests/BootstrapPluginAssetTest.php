@@ -7,11 +7,13 @@ namespace Yii\Asset\Tests;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use Yii\Asset\BootstrapPluginAsset;
 use Yii\Asset\Tests\Support\TestSupport;
-
 use Yiisoft\Assets\Exception\InvalidConfigException;
 
 use function runkit_constant_redefine;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 final class BootstrapPluginAssetTest extends \PHPUnit\Framework\TestCase
 {
     use TestSupport;
