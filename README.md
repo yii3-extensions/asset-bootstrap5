@@ -55,14 +55,14 @@ to the require-dev section of your `composer.json` file.
 
 [Check the documentation docs](/docs/README.md) to learn about usage.
 
+## Testing
+
+[Check the documentation testing](/docs/testing.md) to learn about testing.
+
 ## Support versions
 
 [![PHP81](https://img.shields.io/badge/PHP-%3E%3D8.1-787CB5)](https://www.php.net/releases/8.1/en.php)
 [![Yii30](https://img.shields.io/badge/Yii%20version-3.0-blue)](https://yiiframework.com)
-
-## Testing
-
-[Check the documentation testing](/docs/testing.md) to learn about testing.
 
 ## Our social networks
 
