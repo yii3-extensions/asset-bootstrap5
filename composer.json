@@ -12,7 +12,7 @@
         "php": "^8.1",
         "php-forge/foxy":"^0.1",
         "yiisoft/files":"^2.0",
-        "yiisoft/assets":"^4.0"
+        "yiisoft/assets":"^5.0"
     },
     "require-dev": {
         "maglnet/composer-require-checker": "^4.7",
